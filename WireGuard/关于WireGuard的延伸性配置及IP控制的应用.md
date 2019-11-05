@@ -7,10 +7,10 @@ WireGuard在IP地址上是可以做到配额的。也可以通过子网的限制
 以上安装脚本适用于Ubuntu≥14。0以上的系统。  
 **这里要重点说一下。**如果你的主机或VPS硬件是双口网卡时，在安装完成后配置文件中会一起被写入，你要手动把它删除。如下案例：  
 ```
-`PostUp   = iptables -A FORWARD -i wg0 -j ACCEPT; iptables -A FORWARD -o wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0
-eth1 -j MASQUERADE`  
-`PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -D FORWARD -o wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0
-eth1 -j MASQUERADE`  
+PostUp   = iptables -A FORWARD -i wg0 -j ACCEPT; iptables -A FORWARD -o wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0
+eth1 -j MASQUERADE
+PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -D FORWARD -o wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0
+eth1 -j MASQUERADE
 ```  
 **这里就多了除了eth0以外还多了一个eth1，这里只要删除eth1字符即可，切记保留下后面的 -j MASQUERADE。别忘了-j前面的空格字符一起保留下来。**  
 要不然你连不上。连上了出不去也回不来。  
