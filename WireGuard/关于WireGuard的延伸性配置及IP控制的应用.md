@@ -79,7 +79,7 @@ WireGuard基本支持绝大部分的终端设备，基本上Windows、linux、An
 ## 下面介绍一下多用户连接配置。  
 在我们的日常使用时不可能单一终端使用。有时需要手机、电脑等其他终端同时连接的情况。这时我们就需要建立多用户访问。  
 * 新建公私密钥。  
-`1、cd /etc/wireguard` // 进入wireguard。`  
+`1、cd /etc/wireguard // 进入wireguard。`  
 `2、wg genkey | tee tempkey | wg pubkey >> tempkey`  
 完成以上命令后，ls 你会看见目录中多了一个tempkey这样一个临时钥匙。  
 `3、cat tempkey //查看这个钥匙文件。`  
