@@ -5,7 +5,7 @@ WireGuard在IP地址上是可以做到配额的。也可以通过子网的限制
 在这里就不多罗嗦了。可以参考[Atrandys](https://www.atrandys.com/2018/1345.html)，**（需要扶梯）**   
 我想能到这里来的朋友基本上都已经出来了，也可以去[AtrandysYoutube](https://www.youtube.com/watch?v=-98GAytcUBE)看视频解说。  
 本库也有备份脚本在本库[WireGuard/apps](https://raw.githubusercontent.com/szhaolu/Ubuntu/master/WireGuard/apps/wireguard_install_ubuntu.zip)文件夹中。解压后时.sh的脚本文件（只使用于Ubuntu）。  
-以上安装脚本适用于Ubuntu≥14。0以上的系统。  
+以上安装脚本适用于Ubuntu≥14.0以上的系统。  
 **这里要重点说一下**如果你的主机或VPS硬件是双口网卡时，在安装完成后配置文件中会一起被写入，你要手动把它删除。如下案例：  
 ```
 PostUp   = iptables -A FORWARD -i wg0 -j ACCEPT; iptables -A FORWARD -o wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0
