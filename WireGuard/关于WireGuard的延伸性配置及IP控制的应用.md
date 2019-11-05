@@ -13,7 +13,7 @@ eth1 -j MASQUERADE
 PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -D FORWARD -o wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0
 eth1 -j MASQUERADE
 ```  
-**这里就多了除了eth0以外还多了一个eth1，这里只要删除eth1字符即可，切记保留下后面的 -j MASQUERADE。别忘了-j前面的空格字符一起保留下来。**  
+**这里就除了eth0以外还多了一个eth1，这里只要删除eth1字符即可，切记保留下后面的 -j MASQUERADE。别忘了-j前面的空格字符一起保留下来。**  
 要不然你连不上。连上了出不去也回不来。  
 ## 下面介绍一下用wg0.conf 这个文件来重新自定义IP地址。  
 下面就是wg0.conf的全部信息。  
