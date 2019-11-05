@@ -4,7 +4,7 @@ WireGuard在IP地址上是可以做到配额的。也可以通过子网的限制
 ## 首先WireGuard的安装。  
 在这里就不多罗嗦了。可以参考[Atrandys](https://www.atrandys.com/2018/1345.html)，**（需要扶梯）**   
 我想能到这里来的朋友基本上都已经出来了，也可以去[AtrandysYoutube](https://www.youtube.com/watch?v=-98GAytcUBE)看视频解说。  
-本库也有备份脚本在本库WireGuard/apps文件夹中。本文完成后给于连接。
+本库也有备份脚本在本库WireGuard/apps文件夹中。本文完成后给于连接。  
 以上安装脚本适用于Ubuntu≥14。0以上的系统。  
 **这里要重点说一下**如果你的主机或VPS硬件是双口网卡时，在安装完成后配置文件中会一起被写入，你要手动把它删除。如下案例：  
 ```
@@ -44,3 +44,18 @@ MTU = 1420
   * 简单说一下MTU值。  
 MTU值默认是1420 但网传说调整到1500为最佳，我不确定是否还有别的影响。至少我是将它重值为1500的。  
 * 关于wg0.conf文件的内容就说到这里。**注意的是要在安装WireGuard前使用 ip addr 来确认自己VPS的网卡数量及名称。**  
+## 下面介绍一下客户端文件client.conf。  
+下面是client.conf的全部信息。  
+```
+[Interface]
+PrivateKey = CMtZQA81L2WiYSXiR1Kei7h20fZs1492/uEPPfNvTlo=
+Address = 10.0.0.2/24 
+DNS = 8.8.8.8
+MTU = 1420
+
+[Peer]
+PublicKey = vTIc+4tehWl6F+wATKCCpNUzrNQrK+E+NXcH7BGnoQY=
+Endpoint = 114.160.178.227:16735
+AllowedIPs = 0.0.0.0/0, ::0/0
+PersistentKeepalive = 25
+```  
