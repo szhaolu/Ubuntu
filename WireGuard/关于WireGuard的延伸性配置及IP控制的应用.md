@@ -117,8 +117,8 @@ AllowedIPs = 10.0.0.3/32
 **这里说一下AllowedIPs为什么后面跟32网段，因为这样可以保证一IP一把钥匙。所以这里一定要子网锁死**。  
   * 下面我们停止重启WireGuard服务。  
 `1、wg-quick down wg0 //停止WireGuard服务。`  
-`2、wg-quick up wg0 //开启WireGuard服务。` 
- 服务器这里算是弄完了！我们现在还需要新建一个客户端文件。  
+`2、wg-quick up wg0 //开启WireGuard服务。`  
+服务器这里算是弄完了！我们现在还需要新建一个客户端文件。  
 * 新建WireGuard客户端文件*conf  
 复制一个原来的pc端客户端文件。用记事本打开或者Notepad++打开，其他编译软件也是可以的。  
  ```
