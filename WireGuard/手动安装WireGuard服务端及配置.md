@@ -128,16 +128,16 @@ CEAB1isWSc2B2+IYFCZdQa7xDVueEMhZwZ7hy2dnMG8= //客户端私钥
 直接进入编写。代码如下。  
 ```
 [Interface]
-PrivateKey = $s1
-Address = 10.0.0.1/24 
-PostUp   = iptables -A FORWARD -i wg0 -j ACCEPT; iptables -A FORWARD -o wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o $eth -j MASQUERADE
-PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -D FORWARD -o wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o $eth -j MASQUERADE
-ListenPort = $port
+PrivateKey = 0MT+2fQBtHOCqRAUyXYrVLXiOmyQ3lksJSsdTCwdvk0= // 服务器私钥
+Address = 172.16.2.249/29
+PostUp   = iptables -A FORWARD -i wg0 -j ACCEPT; iptables -A FORWARD -o wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 // 出口网卡名称 -j MASQUERADE
+PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -D FORWARD -o wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 // 出口网卡名称 -j MASQUERADE
+ListenPort = 35421 //建议时20000——50000之间任意选
 DNS = 8.8.8.8
-MTU = 1420
+MTU = 1500
+
+[Peer]
+PublicKey = 4wobuxeoK/69Ei2W9Opc8KH3Hkwxbxf3wMjA+pCaZz8= //客户端公钥
+AllowedIPs = 172.16.2.250/32
 ```  
-```
-[Peer]  
-PublicKey = $c2
-AllowedIPs = 10.0.0.2/32
-```  
+至于为什么要这样编译配置文件请看这篇文章[关于WireGuard的延伸性配置及IP控制的应用](https://github.com/szhaolu/Ubuntu/blob/master/WireGuard/%E5%85%B3%E4%BA%8EWireGuard%E7%9A%84%E5%BB%B6%E4%BC%B8%E6%80%A7%E9%85%8D%E7%BD%AE%E5%8F%8AIP%E6%8E%A7%E5%88%B6%E7%9A%84%E5%BA%94%E7%94%A8.md)在这里我就不废话罗嗦了。  
