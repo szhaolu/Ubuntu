@@ -21,7 +21,7 @@ root@localhost:/# ip addr
     link/ether ff:ee:7a:8c:1b:b6 brd ff:ff:ff:ff:ff:ff
     inet 108.241.66.38/24 brd 108.241.66.255 scope global dynamic eth0
        valid_lft 258sec preferred_lft 2548sec
-    inet6 fe80::216:14ff:feb2:d4e6/64 scope link 
+    inet6 fe62::126:14ea:fac4:b6e2/64 scope link 
        valid_lft forever preferred_lft forever
 3: eth1: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
     link/ether ff:ee:7a:8c:1b:b6 brd ff:ff:ff:ff:ff:ff
