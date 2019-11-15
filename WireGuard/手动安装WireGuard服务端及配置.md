@@ -32,7 +32,6 @@ root@localhost:/# ip addr
 用这个命令来查看如果没有安装，如下显示。  
 ```
 net.ipv6.conf.all.accept_ra = 2
-net.ipv4.ip_forward = 1
 ```  
 当然也有绝对纯净的VPS服务器，`sysctl -p`之后什么也不会发生什么东西也不会显示。  
 如果你使用`sysctl -p`命令后出现了以下两行代码。就说明你的VPS服务商已经为你预安装了BBR加速。代码如下：  
