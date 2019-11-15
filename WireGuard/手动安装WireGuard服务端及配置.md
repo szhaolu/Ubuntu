@@ -141,3 +141,6 @@ PublicKey = 4wobuxeoK/69Ei2W9Opc8KH3Hkwxbxf3wMjA+pCaZz8= //客户端公钥
 AllowedIPs = 172.16.2.250/32
 ```  
 至于为什么要这样编译配置文件请看这篇文章[关于WireGuard的延伸性配置及IP控制的应用](https://github.com/szhaolu/Ubuntu/blob/master/WireGuard/%E5%85%B3%E4%BA%8EWireGuard%E7%9A%84%E5%BB%B6%E4%BC%B8%E6%80%A7%E9%85%8D%E7%BD%AE%E5%8F%8AIP%E6%8E%A7%E5%88%B6%E7%9A%84%E5%BA%94%E7%94%A8.md)在这里我就不废话罗嗦了。  
+这里全部以后服务器上只须启动WireGuard服务即可命令如下：  
+`sudo wg-quick up wg0`之后WireGuard服务就会被启动。弄到这里服务端基本搞完。下面开始配置客户端文件。  
+* 客户端文件配置。  
