@@ -65,4 +65,4 @@ sudo apt-get install -y software-properties-common
 sudo add-apt-repository -y ppa:wireguard/wireguard  
 sudo apt-get install -y wireguard
 ```  
-安装的部分就算完成了。繁琐的事情是配置服务端文件和客户端文件。
+安装的部分就算完成了。繁琐的事情是配置服务端文件和客户端文件。  
