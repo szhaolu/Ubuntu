@@ -144,3 +144,23 @@ AllowedIPs = 172.16.2.250/32
 这里全部以后服务器上只须启动WireGuard服务即可命令如下：  
 `sudo wg-quick up wg0`之后WireGuard服务就会被启动。弄到这里服务端基本搞完。下面开始配置客户端文件。  
 * 客户端文件配置。  
+这里我们建议你可以使用Windows的记事本来完成编写，代码如下：  
+```
+[Interface]
+PrivateKey = CEAB1isWSc2B2+IYFCZdQa7xDVueEMhZwZ7hy2dnMG8= \\ 客户端私钥
+Address = 172.16.2.250/29 
+DNS = 8.8.8.8
+MTU = 1500
+
+[Peer]
+PublicKey = lK5STTx8DGFK7fVZyhY+Ppw/dYoqi7rHBte9lSGot2M=  \\ 服务器公钥
+Endpoint = 108.241.66.38:35421 \\服务器出口IP与对应的端口号
+AllowedIPs = 0.0.0.0/0, ::0/0
+PersistentKeepalive = 25
+```  
+保存文件名随意，只要用.conf结尾即可。  
+**然后用WireGuard或者是TunSafe等其他对应自己系统的程序运行客户端配置文件即可。**  
+* 最后一步删除服务器上多余的文件。必须钥匙文件。  
+`rm -rf serverkey pckey `  
+
+这样我们在没有依托脚本的情况下完全安装并且使用了WireGuard程序。以后也可以不在依靠其他人的脚本库了。
