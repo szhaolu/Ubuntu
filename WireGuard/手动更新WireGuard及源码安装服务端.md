@@ -1,5 +1,5 @@
 # 手动更新WireGuard及源码安装服务端  
-在日常的安装时,我们一般使用这条命令`sudo apt-get install -y wireguard`也就安装完成了。其方法简单，源码包也是定时从“https://github.com/WireGuard/WireGuard”这个库中获取最新的安装包。但实际情况是安装包更新后未必能有旧版本的性能和出现一些不稳定的BUG。例如下面两个源码：  
+在日常的安装时,我们一般使用这条命令`sudo apt-get install -y wireguard`也就安装完成了。其方法简单，源码包也是定时从[WireGuard](https://github.com/WireGuard/WireGuard)这个库中获取最新的安装包。但实际情况是安装包更新后未必能有旧版本的性能和出现一些不稳定的BUG。例如下面两个源码：  
 ```
 WireGuard-0.0.20191127.tar.xz 
 WireGuard-0.0.20191012.tar.xz 
