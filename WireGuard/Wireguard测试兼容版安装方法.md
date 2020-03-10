@@ -63,7 +63,7 @@ net.ipv4.ip_forward = 1
 相关的配置步骤与手动安装wireguard配置步骤一致。可以参考[手动安装WireGuard服务端及配置](https://github.com/szhaolu/Ubuntu/blob/master/WireGuard/%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85WireGuard%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%8F%8A%E9%85%8D%E7%BD%AE.md)  
 这里需要关注配置部分的内容和公私密钥的生成部分即可。  
 
-##最后总结  
+## 最后总结  
 * 1、如果没有什么特别必要的情况，不要轻易尝试测试版本。
 * 2、如果你的主机提供商对OS的系统还原支持不是很理想的话也不建议尝试更新或者是测试。  
 一旦出现问题系统还原是个不小的问题。  
