@@ -3,7 +3,8 @@
 完成bbr安装后，确定没有问题后。开始安装相关的必要程序。  
 # 现在开始安装  
 ~~~  sudo apt-get update -y //更新apt-get库文件。
-sudo apt-get install -y bc gcc make libmnl-dev libelf-dev //安装更新必要的系统程序文件。如果你的wireguard还要二位码显示要加上安装 qrencode。（一般不需要。）
+sudo apt-get install -y bc gcc make libmnl-dev libelf-dev //安装更新必要的系统程序文件。  
+如果你的wireguard还要二位码显示要加上安装 qrencode。（一般不需要。）
 sudo apt-get install -y vim wget git net-tools curl //安装一些必要的编译软件和下载程序。
 sudo apt-get install -y software-properties-common //安装software-properties程序。
 sudo apt-get install -y openresolv //安装OpenVPN服务。（这里还是建议完全安装。）（如果你不借用tcp通信，不使用Tunsafe可以选择不装，）
